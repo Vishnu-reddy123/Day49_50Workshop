@@ -80,3 +80,15 @@ window.addEventListener('DOMContentLoaded', (event) => {
                 });
                 return setItems;
             }
+            const resetForm = () =>{
+                setValue("#name", "");
+                setValue("#address", "");
+                setValue("#city", "");
+                setValue("#state", "");
+                setValue("#zip", "");
+                setValue("#phone", "");
+            }
+            const setValue = (id, value) => {
+                const element = document.querySelector(id);
+                element.value = value;
+            } 

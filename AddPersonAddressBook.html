@@ -18,8 +18,7 @@
         </div>
     </header>
     <div class="form-content">
-        <form class="form" action="#" onsubmit="save()"></form>
-    </div>
+        <form class="form" action="#" onreset="resetForm()" onsubmit="save()">
         <div class="form-head" style="text-align:center;">
             <h3>PERSON ADDRESS FORM</h3>
         </div>
@@ -106,6 +105,7 @@
             <error-output class="number-error" for="phone"></error-output>
         </div>
         <div class="buttonParent">
+            <a href="home.html" class="resetButton button cancelButton">Cancel</a>
             <div class="Add-reset">
                 <button type="submit" class="button addButton" id="addButton">Add</button>
                 <button type="reset" class="button resetButton">Reset</button>
