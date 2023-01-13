@@ -1,24 +1,50 @@
-const name=document.querySelector('#name');
-const nameError=document.querySelector('.name-error');
-    name.addEventListener('input',function(){
+class Contact{
+    get name(){
+        return this._name;
+    }
+    set name(name){
         let nameRegex=RegExp('^[A-Z]{1}[a-z]{3,}\\s{1,}[A-Z]{1}[a-z]{2,}$');
-        if (nameRegex.test(name.value))
-        nameError.textContent="";
-        else nameError.textContent="Name is Incorrect!";
-    });
-const address=document.querySelector('#address');
-const addressError=document.querySelector('.address-error');
-    address.addEventListener('input',function(){
+        if(nameRegex.test(name))
+        this._name=name;
+        else throw 'Name is Incorrect!';
+    }
+    get address(){
+        return this._address;
+    }
+    set address(address){
         let addressRegex=RegExp('^[a-zA-z0-9!@#$%^&*/-]{3,}\\s{0,}[a-zA-z0-9!@#$%^&*/-]{3,}\\s{0,}$');
-        if (addressRegex.test(address.value))
-        addressError.textContent="";
-        else addressError.textContent="Address is Incorrect!";
-    });
-const phoneNumber=document.querySelector('#tel');
-const numberError=document.querySelector('.number-error');
-    phoneNumber.addEventListener('input',function(){
-        let numberRegex=RegExp("^[0-9!+-]{10,}$");
-        if (numberRegex.test(phoneNumber.value))
-        numberError.textContent="";
-        else numberError.textContent="Phone number is Incorrect!";
-    });
+        if(addressRegex.test(address))
+        this._address=address;
+        else throw 'Address is Incorrect!'
+    }
+    get city(){
+        return this._city;
+    }
+    set city(city){
+        this._city=city;
+    }
+    get state(){
+        return this._state;
+    }
+    set state(state){
+        this._state=state;
+    }
+    get zip(){
+        return this._zip;
+    }
+    set zip(zip){
+        this._zip=zip;
+    }
+    get phoneNumber(){
+        return this._phoneNumber;
+    }
+    set phoneNumber(phoneNumber){
+        let phoneNumberRegex=RegExp("^[0-9!+-]{10,}$");
+        if(phoneNumberRegex.test(phoneNumber))
+        this._phoneNumber=phoneNumber;
+        else throw 'Phone number is incorrect!'
+    }
+    toString(){
+        return "Name : " + this.name + ", Address : " + this.address + ", City : "+ this.city + ", State : "+ this.state +", Zip : "+ this.zip+ ", Phone Number : "+ this.phoneNumber;
+    }
+}
