@@ -32,3 +32,24 @@ window.addEventListener('DOMContentLoaded',(even) => {
         }
         document.querySelector('#display').innerHTML=innerHtml;
     } 
+    const remove = (node) => {
+        let addressBookData = addressBookList.find(personData => personData._name == node.id);
+        if (!addressBookData) return;
+        const index = addressBookList
+                      .map(personData => personData._name)
+                      .indexOf(addressBookData._name);
+        addressBookList.splice(index, 1);
+        localStorage.setItem("AddressBookList", JSON.stringify(addressBookList));
+        document.querySelector(".person-count").textContent=addressBookList.length;
+        createInnerHtml();
+    } 
+    const update = (node) => {
+        let addressBookData = addressBookList.find(personData => personData._name == node.id);
+        if(!addressBookData) return;
+        localStorage.setItem('editBook', JSON.stringify(addressBookData));
+        window.location.replace(site_properties.add_person_page);
+    } 
+    let site_properties={
+        home_page: "home.html",
+        add_person_page: "AddPersonAddressBook.html"
+    };
