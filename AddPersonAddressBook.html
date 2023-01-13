@@ -18,7 +18,8 @@
         </div>
     </header>
     <div class="form-content">
-        <form class="form" action="#" onreset="resetForm()" onsubmit="save();return false">
+        <form class="form" action="#" onsubmit="save()"></form>
+    </div>
         <div class="form-head" style="text-align:center;">
             <h3>PERSON ADDRESS FORM</h3>
         </div>
@@ -31,7 +32,7 @@
             <input class="input" type="text" id="address" name="address" placeholder="Address....." required>
         </div>
         <div class="row-content">
-            <label class="label text" for="selectCity"></label>
+            <label class="label text" for="City"></label>
             <div class="label text">
                 <select id="selectCity" name="SelectCity">
                     <option value="selectcity">Select City</option>
@@ -68,7 +69,9 @@
                     <option value="Shimla">Shimla</option>
                     <option value="Raipur">Raipur</option>
                 </select>
-                <select id="selectState" name="SelectState">
+                <label class="label-text" for="state"></label>
+                    <select id="state" name="state">
+                        <option value="" selected disabled hidden>Select State</option>
                     <option value="selectstate">Select State</option>
                     <option value="Odisha">Odisha</option>
                     <option value="West Bengal">West Bengal</option>
@@ -94,13 +97,13 @@
             </div>
         </div>
         <div class="row-content">
-            <label class="label text" for="ZipCode"></label>
-            <input class="input" type="number" id="ZipCode" name="ZipCode" placeholder="Zip Code....." required>
+            <label class="label text" for="zip"></label>
+            <input class="input" type="number" id="zip" name="zip" placeholder="Zip Code....." required>
         </div>
         <div class="row-content">
-            <label class="label text" for="tel"></label>
-            <input class="input" type="tel" id="tel" name="tel" placeholder="Phone Number" required>
-            <error-output class="number-error" for="tel"></error-output>
+            <label class="label text" for="phone"></label>
+            <input class="input" type="tel" id="phone" name="phone" placeholder="Phone Number" required>
+            <error-output class="number-error" for="phone"></error-output>
         </div>
         <div class="buttonParent">
             <div class="Add-reset">
@@ -112,5 +115,6 @@
     </div>
     <script src="AddressBook.js"></script>
     <script src="AddAddressBook.js"></script>
+    
 </body>
 </html>
