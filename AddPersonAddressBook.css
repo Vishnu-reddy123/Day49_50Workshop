@@ -87,6 +87,15 @@ background-color: #009fff;
     opacity: 1;
     font-family: Roboto;
     }
+    .name-error{
+        color: red;
+    }
+    .address-error{
+        color: red;
+    }
+    .number-error{
+        color: red;
+    }
     .input{
     width: 100%;
     padding: 12px;
